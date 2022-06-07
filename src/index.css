@@ -30,6 +30,10 @@ code {
     monospace;
 }
 
+.header {
+  margin-bottom: 0.5rem;
+}
+
 .flex-ctr-ctr {
   display: flex;
   justify-content: center;
