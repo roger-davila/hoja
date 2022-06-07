@@ -31,6 +31,7 @@ export default function LoginForm({ setUser }) {
     <>
       <form autoComplete="off" onSubmit={handleSubmit}>
         <h3>Log In</h3>
+        <p>Enter your email and password to continue writing notes.</p>
         <div>
           <label>Email</label>
           <input type="text" name="email" value={credentials.email} onChange={handleChange} required placeholder='Email'/>
