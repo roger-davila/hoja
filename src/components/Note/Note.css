@@ -1,3 +1,36 @@
 .Note {
+  color: var(--text-color-primary);
+  padding: 0.3rem 0.75rem;
   border: 1px solid #E0E0E0;
+  border-radius: 4px;
+}
+
+.note-link {
+  display: block;
+  text-decoration: none;
+}
+
+.note-link:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+
+.note-link:visited {
+  color: inherit;
+}
+
+.last-updated, .notebook {
+  font-size: 14px;
+  color: var(--text-color-secondary);
+}
+
+.note-text-preview {
+  font-size: 16px;
+}
+
+.note-title {
+  font-size: 20px;
+}
+
+.note-title, .note-text-preview {
+  margin-bottom: 0.3rem;
 }
