@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import * as notesAPI from '../../utilities/notes-api';
+import NotesList from '../../components/NotesList/NotesList';
 export default function NotesPage() {
   const [notes, setNotes] = useState([]);
   useEffect(() => {
@@ -10,6 +11,9 @@ export default function NotesPage() {
     getNotes();
   }, []);
   return (
-    <h1>Notes Page</h1>
+    <main className='main-container'>
+      <h1>Notes</h1>
+      <NotesList notes={notes} />
+    </main>
   )
 } 

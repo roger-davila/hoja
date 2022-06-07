@@ -1,0 +1,95 @@
+.form-container {
+  padding: 1rem;
+  border: 1px solid var(--border-color-main);
+  border-radius: 4px;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--bg-color-main);
+  color: var(--text-dark);
+  border: .1vmin solid var(--accent-color);
+  border-radius: 1vmin;
+  padding: .6vmin;
+  text-align: center;
+  font-size: 2vmin;
+}
+
+p.error-message {
+  color: var(--text-danger);
+}
+
+
+form {
+  padding: 2rem;
+  margin: auto;
+  max-width: 400px;
+  border: 1px solid var(--border-color-main);
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+  color: var(--text-light);
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+}
+
+fieldset {
+  border: none;
+}
+
+label {
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+}
+
+input {
+  width: 100%;
+  padding: 0.3rem;
+  font-size: 0.8rem;
+  border: 1px solid var(--border-color-main);
+  border-radius: 4px;
+  color: var(--text-color-primary);
+  background-image: none !important; /* prevent lastpass */
+  outline: none;
+}
+
+input:focus {
+  border-color: var(--text-color-primary);
+}
+
+button, a.button {
+  margin: 1vmin;
+  padding: 0.5rem;
+  color: var(--bg-color-main);
+  background-color: var(--bg-color-secondary);
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  border: 1px solid var(--border-color-main);
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+}
+
+button.btn-sm {
+  font-size: 1.5vmin;
+  padding: .6vmin .8vmin;
+}
+
+button.btn-xs {
+  font-size: 1vmin;
+  padding: .4vmin .5vmin;
+}
+
+button:disabled, form:invalid button[type="submit"] {
+  cursor: not-allowed;
+  background-color: var(--bg-color-tertiary);
+}
+
+button[type="submit"] {
+  margin: 1vmin 0 0;
+}

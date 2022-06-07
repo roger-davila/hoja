@@ -40,22 +40,30 @@ export default class SignUpForm extends Component {
   render() {
     const disable = this.state.password !== this.state.confirm;
     return (
-      <div>
-        <div className="form-container">
-          <form autoComplete="off" onSubmit={this.handleSubmit}>
+      <>
+        <form autoComplete="off" onSubmit={this.handleSubmit}>
+          <h3>Hoja</h3>
+          <h3>Create an Account with Hoja</h3>
+          <div>
             <label>Name</label>
             <input type="text" name="name" value={this.state.name} onChange={this.handleChange} required />
+          </div>
+          <div>
             <label>Email</label>
             <input type="email" name="email" value={this.state.email} onChange={this.handleChange} required />
+          </div>
+          <div>
             <label>Password</label>
             <input type="password" name="password" value={this.state.password} onChange={this.handleChange} required />
+          </div>
+          <div>
             <label>Confirm</label>
             <input type="password" name="confirm" value={this.state.confirm} onChange={this.handleChange} required />
-            <button type="submit" disabled={disable}>SIGN UP</button>
-          </form>
-        </div>
+          </div>
+          <button type="submit" disabled={disable}>SIGN UP</button>
+        </form>
         <p className="error-message">&nbsp;{this.state.error}</p>
-      </div>
+      </>
     );
   }
 }
