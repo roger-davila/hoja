@@ -4,4 +4,5 @@ const notesCtrl = require('../../controllers/api/notes');
 
 router.get('/notes/user', notesCtrl.getAllNotes);
 
+router.post('/notes/user', notesCtrl.createNote);
 module.exports = router;
