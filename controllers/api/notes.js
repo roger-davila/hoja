@@ -2,7 +2,8 @@ const Note = require('../../models/note');
 
 module.exports = {
   getAllNotes,
-  createNote
+  createNote,
+  findNote
 }
 
 async function getAllNotes(req, res) {
@@ -13,4 +14,9 @@ async function getAllNotes(req, res) {
 async function createNote(req, res) {
   const note = await Note.create({ user: req.user._id});
   return res.json(note);
+}
+
+async function findNote(req, res) {
+  const note = await Note.findById(req.params.noteId);
+  res.json(note);
 }
