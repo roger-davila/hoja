@@ -17,7 +17,12 @@ const noteSchema = new Schema({
   notebook: { type: Schema.Types.ObjectId, ref: 'Notebook' },
   tags: [{ type: Schema.Types.ObjectId, ref: 'Tag' }]
 }, {
-  timestamps: true
+  timestamps: true,
+  toJSON: { virtuals: true }
+});
+
+noteSchema.virtual('lastModified').get(function() {
+  return new Date(this.updatedAt).toLocaleString();
 });
 
 module.exports = mongoose.model('Note', noteSchema);
