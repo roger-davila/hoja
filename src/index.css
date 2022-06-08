@@ -16,13 +16,20 @@
 
 body {
   margin: 0;
-  padding: 1rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--bg-color-main);
+}
+
+#root {
+  position: relative;
+  min-height: 100vh;
 }
 
 code {
