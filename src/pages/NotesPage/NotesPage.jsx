@@ -18,7 +18,7 @@ export default function NotesPage({user}) {
     getNotes();
   }, []);
   return (
-    <main className='main-container'>
+    <main className=' NotesPage main-container'>
       <h1 className='header'>Notes</h1>
       <NotesList notes={notes} user={user} />
       <button className='add-note-button' onClick={handleNewNote}>+</button>
