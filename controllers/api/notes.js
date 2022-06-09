@@ -3,7 +3,8 @@ const Note = require('../../models/note');
 module.exports = {
   getAllNotes,
   createNote,
-  findNote
+  findNote,
+  saveNote
 }
 
 async function getAllNotes(req, res) {
@@ -18,5 +19,10 @@ async function createNote(req, res) {
 
 async function findNote(req, res) {
   const note = await Note.findById(req.params.noteId);
-  res.json(note);
+  return res.json(note);
+}
+
+async function saveNote(req, res) {
+  const note = await Note.findByIdAndUpdate(req.body.note._id, { markdown_text: req.body.note.markdown_text });
+  return res.json(note);
 }
