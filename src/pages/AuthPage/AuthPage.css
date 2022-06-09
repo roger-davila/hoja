@@ -35,10 +35,6 @@ form {
   box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
 }
 
-fieldset {
-  border: none;
-}
-
 label {
   font-size: 0.8rem;
   display: flex;
@@ -48,11 +44,12 @@ label {
 input {
   width: 100%;
   padding: 0.3rem;
-  font-size: 0.8rem;
+  font-size: 16px;
   border: 1px solid var(--border-color-main);
   border-radius: 4px;
   color: var(--text-color-primary);
-  background-image: none !important; /* prevent lastpass */
+  background-image: none !important;
+  /* prevent lastpass */
   outline: none;
 }
 
@@ -60,16 +57,16 @@ input:focus {
   border-color: var(--text-color-primary);
 }
 
-button, a.button {
-  margin: 1vmin;
-  padding: 0.5rem;
+button,
+a.button {
+  width: 100%;
   color: var(--bg-color-main);
   background-color: var(--bg-color-secondary);
   font-size: 0.8rem;
   font-weight: bold;
   text-decoration: none;
   text-align: center;
-  border: 1px solid var(--border-color-main);
+  border: none;
   border-radius: 4px;
   outline: none;
   cursor: pointer;
@@ -85,7 +82,8 @@ button.btn-xs {
   padding: .4vmin .5vmin;
 }
 
-button:disabled, form:invalid button[type="submit"] {
+button:disabled,
+form:invalid button[type="submit"] {
   cursor: not-allowed;
   background-color: var(--bg-color-tertiary);
 }
