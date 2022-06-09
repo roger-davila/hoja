@@ -1,10 +1,20 @@
 .NoteDetailPage {
+  display: flex;
+  flex-direction: column;
+}
+
+.NoteDetailPage .note-title, .NoteDetailPage .note-last-modified {
+  margin-bottom: 0.4rem;
+}
+
+.NoteDetailPage .note-field {
   flex-grow: 1;
+  line-height: 1.5;
 }
 
 .NoteDetailPage .note-field {
   border: none;
   outline: none;
-  width: 100%;
   resize: none;
+  width: 100%;
 }
