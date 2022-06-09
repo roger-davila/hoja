@@ -1,0 +1,52 @@
+.PopupDrawer-container {
+  position: fixed;
+  bottom: 40px;
+  right: 20px;
+}
+
+.PopupDrawer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1rem 0;
+  background-color: var(--bg-color-secondary);
+  color: var(--text-color-secondary);
+  border-radius: 40px 40px 0 0;
+  position: relative;
+  bottom: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(40px);
+}
+
+.PopupDrawer.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.PopupDrawer li {
+  list-style: none;
+  cursor: pointer;
+}
+
+.PopupDrawer-button {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.PopupDrawer-button.active {
+  border-radius: 0 0 50% 50%;
+}
+
+.PopupDrawer,
+.PopupDrawer-button {
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+}
