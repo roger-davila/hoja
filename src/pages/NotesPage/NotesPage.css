@@ -1,7 +1,7 @@
 .add-note-button {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
+  position: fixed;
+  bottom: 50px;
+  right: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
