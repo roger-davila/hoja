@@ -1,8 +1,10 @@
 .NavBar {
+  display: flex;
+  gap: 1rem;
   flex-grow: 0;
   position: sticky;
-  bottom: 0;
+  top: 0;
   background-color: var(--bg-color-main);
   padding: 0.75rem;
-  border-top: 1px solid var(--border-color-main);
+  border-bottom: 1px solid var(--border-color-main);
 }
