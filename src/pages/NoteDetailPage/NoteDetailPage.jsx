@@ -1,12 +1,14 @@
 import { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import * as notesAPI from '../../utilities/notes-api';
+import PopupDrawer from '../../components/PopupDrawer/PopupDrawer';
 import './NoteDetailPage.css';
 
-export default function NoteDetailPage() {
+export default function NoteDetailPage({ user }) {
   const { noteId } = useParams();
   const [note, setNote] = useState({});
   const timer = useRef();
+  const autoSave = useRef(false);
 
   useEffect(() => {
     async function getNote() {
@@ -17,19 +19,23 @@ export default function NoteDetailPage() {
   }, []);
 
   useEffect(() => {
-    timer.current = setTimeout(() => notesAPI.saveNote(note), 1500);
-    return () => clearTimeout(timer.current);
+    if (autoSave.current) {
+      timer.current = setTimeout(() => notesAPI.saveNote(note), 1500);
+      return () => clearTimeout(timer.current);
+    }
   }, [note]);
 
   function handleTyping(evt) {
-    setNote({...note, [evt.target.name]: evt.target.value});
+    if (!autoSave.current) autoSave.current = true;
+    setNote({ ...note, [evt.target.name]: evt.target.value });
   }
-  
+
   return (
     <main className='NoteDetailPage main-container'>
       <h3 className='note-title'>{note.title}</h3>
       <p className='note-last-modified'>{note.lastModified}</p>
       <textarea className='note-field' value={note.markdown_text} name="markdown_text" onChange={handleTyping} placeholder='Note field...' ></textarea>
+      <PopupDrawer page={'note'} user={user} note={note} />
     </main>
   )
 }
