@@ -5,7 +5,7 @@ export default function OrderHistoryPage() {
     const expDate = await checkToken();
     console.log(expDate);
   }
-  
+
   return (
     <>
       <h1>OrderHistoryPage</h1>
