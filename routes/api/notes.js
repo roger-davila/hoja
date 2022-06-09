@@ -2,11 +2,13 @@ const express = require('express');
 const router = express.Router();
 const notesCtrl = require('../../controllers/api/notes');
 
-router.get('/notes/user', notesCtrl.getAllNotes);
+router.get('/user/notes', notesCtrl.getAllNotes);
 
-router.get('/notes/user/:noteId', notesCtrl.findNote);
+router.get('/user/notes/:noteId', notesCtrl.findNote);
 
-router.post('/notes/user', notesCtrl.createNote);
+router.post('/user/note', notesCtrl.createNote);
+
+router.put('/user/notes/note', notesCtrl.saveNote);
 
 
 module.exports = router;
