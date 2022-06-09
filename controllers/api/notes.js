@@ -4,7 +4,8 @@ module.exports = {
   getAllNotes,
   createNote,
   findNote,
-  saveNote
+  saveNote,
+  deleteNote
 }
 
 async function getAllNotes(req, res) {
@@ -24,5 +25,10 @@ async function findNote(req, res) {
 
 async function saveNote(req, res) {
   const note = await Note.findByIdAndUpdate(req.body.note._id, { markdown_text: req.body.note.markdown_text });
+  return res.json(note);
+}
+
+async function deleteNote(req, res) {
+  const note = await Note.findByIdAndDelete(req.params.noteId);
   return res.json(note);
 }
