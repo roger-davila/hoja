@@ -10,5 +10,6 @@ router.post('/user/note', notesCtrl.createNote);
 
 router.put('/user/notes/note', notesCtrl.saveNote);
 
+router.delete('/user/notes/:noteId', notesCtrl.deleteNote);
 
 module.exports = router;
