@@ -12,15 +12,15 @@ function App() {
 
   return (
     <main className="App">
-      { user ?
+      {user ?
         <>
+          <NavBar user={user} setUser={setUser} />
           <Routes>
             {/* Route components in here */}
-            <Route path={`/${user.name}/notes`} element={<NotesPage user={user}/>} />
-            <Route path={`/${user.name}/notes/:noteId`} element={<NoteDetailPage user={user}/>} />
+            <Route path={`/${user.name}/notes`} element={<NotesPage user={user} />} />
+            <Route path={`/${user.name}/notes/:noteId`} element={<NoteDetailPage user={user} />} />
             <Route path='/*' element={<Navigate to={`/${user.name}/notes`} />} />
           </Routes>
-          <NavBar user={user} setUser={setUser} />
         </>
         :
         <AuthPage setUser={setUser} />
