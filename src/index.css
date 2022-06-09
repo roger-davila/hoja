@@ -4,7 +4,8 @@
   --bg-color-tertiary: #D9D9D9;
   --border-color-main: #E0E0E0;
   --text-color-primary: #000000;
-  --text-color-secondary: #5A5A5A;
+  --text-color-secondary: #ffffff;
+  --text-color-tertiary: #5A5A5A;
   --text-danger: hsl(0, 96%, 65%);
 }
 
@@ -24,6 +25,7 @@ body {
   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
   background-color: var(--bg-color-main);
 }
 
