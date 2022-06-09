@@ -3,16 +3,24 @@
   flex-direction: column;
 }
 
-.NoteDetailPage .note-title, .NoteDetailPage .note-last-modified {
+.NoteDetailPage .note-title,
+.NoteDetailPage .note-last-modified {
   margin-bottom: 0.4rem;
 }
 
-.NoteDetailPage .note-field {
-  flex-grow: 1;
-  line-height: 1.5;
+.NoteDetailPage .note-title{
+  font-size: 20px;
+}
+
+.NoteDetailPage .note-last-modified {
+  font-size: 14px;
+  color: var(--text-color-tertiary);
 }
 
 .NoteDetailPage .note-field {
+  font-size: 16px;
+  flex-grow: 1;
+  line-height: 1.5;
   border: none;
   outline: none;
   resize: none;
