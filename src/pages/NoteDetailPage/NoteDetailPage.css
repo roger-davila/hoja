@@ -9,6 +9,7 @@
 }
 
 .NoteDetailPage .note-title{
+  font-weight: bold;
   font-size: 20px;
 }
 
@@ -21,8 +22,12 @@
   font-size: 16px;
   flex-grow: 1;
   line-height: 1.5;
+  resize: none;
+}
+
+.NoteDetailPage .note-title,
+.NoteDetailPage .note-field {
   border: none;
   outline: none;
-  resize: none;
   width: 100%;
 }
