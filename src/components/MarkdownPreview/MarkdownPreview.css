@@ -1,0 +1,20 @@
+.MarkdownPreview > * {
+  margin-bottom: 0.5rem;
+}
+
+pre {
+  display: block;
+  box-sizing: border-box;
+  background-color: var(--bg-color-code-block);
+  border: 1px solid var(--border-color-main);
+
+  border-radius: 4px;
+}
+
+.MarkdownPreview ul {
+  margin-left: 1rem;
+}
+
+.MarkdownPreview ul li {
+  margin-bottom: 0.5rem;
+}
