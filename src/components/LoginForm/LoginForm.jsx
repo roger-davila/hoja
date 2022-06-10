@@ -34,11 +34,11 @@ export default function LoginForm({ setUser }) {
         <p>Enter your email and password to continue writing notes.</p>
         <div>
           <label>Email</label>
-          <input type="text" name="email" value={credentials.email} onChange={handleChange} required placeholder='Email'/>
+          <input className='auth-input' type="text" name="email" value={credentials.email} onChange={handleChange} required placeholder='Email'/>
         </div>
         <div>
           <label>Password</label>
-          <input type="password" name="password" value={credentials.password} onChange={handleChange} required placeholder='Password'/>
+          <input className='auth-input' type="password" name="password" value={credentials.password} onChange={handleChange} required placeholder='Password'/>
         </div>
         <button type="submit">LOG IN</button>
       </form>
