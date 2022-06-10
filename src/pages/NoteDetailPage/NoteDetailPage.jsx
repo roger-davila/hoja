@@ -32,7 +32,7 @@ export default function NoteDetailPage({ user }) {
 
   return (
     <main className='NoteDetailPage main-container'>
-      <h3 className='note-title'>{note.title}</h3>
+      <input className='note-title' name="title" onChange={handleTyping} value={note.title} />
       <p className='note-last-modified'>{note.lastModified}</p>
       <textarea className='note-field' value={note.markdown_text} name="markdown_text" onChange={handleTyping} placeholder='Note field...' ></textarea>
       <PopupDrawer page={'note'} user={user} note={note} />
