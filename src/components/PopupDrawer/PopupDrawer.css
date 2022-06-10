@@ -1,7 +1,7 @@
 .PopupDrawer-container {
   background-color: var(--bg-color-secondary);
   position: fixed;
-  border-radius: 40px;
+  border-radius: 60px;
   bottom: 20px;
   right: 20px;
 }
@@ -12,7 +12,7 @@
   gap: 1rem;
   padding: 1rem 1rem 0;
   color: var(--text-color-secondary);
-  border-radius: 40px 40px 0 0;
+  border-radius: 60px 60px 0 0;
   position: relative;
   bottom: 100%;
   display: none;
@@ -32,9 +32,6 @@
   height: 60px;
   width: 60px;
   padding: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   cursor: pointer;
 }
 
