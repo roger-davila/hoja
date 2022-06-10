@@ -7,6 +7,8 @@
   --text-color-secondary: #ffffff;
   --text-color-tertiary: #5A5A5A;
   --text-danger: hsl(0, 96%, 65%);
+  --bg-color-code-block: #f0f0f0;
+  --border-color-code-block: #000000;
 }
 
 *, *:before, *:after {
