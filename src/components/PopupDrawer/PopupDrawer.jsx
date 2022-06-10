@@ -4,7 +4,7 @@ import * as notesAPI from '../../utilities/notes-api';
 import {MarkdownPreviewIcon, DeleteNoteIcon, AddNoteIcon, AddTagIcon, MenuIcon} from '../HojaIcons/HojaIcons';
 import './PopupDrawer.css'
 
-export default function PopupDrawer({ page, user, note }) {
+export default function PopupDrawer({ page, user, note, setIsMarkdown}) {
   let navigate = useNavigate();
   const popupDrawer = useRef(null);
   const [isActive, setIsActive] = useState(false);
@@ -22,6 +22,10 @@ export default function PopupDrawer({ page, user, note }) {
     navigate(`/${user.name}/notes`);
   }
 
+  function handlePreview() {
+    setIsMarkdown((isMarkdown) => !isMarkdown);
+  }
+
   function chooseMenuItems() {
     if (page === 'note') {
       return (
@@ -30,7 +34,7 @@ export default function PopupDrawer({ page, user, note }) {
           <li>Delete</li>
           <li>Add to Notebook</li>
           <li>Add Tags</li> */}
-          <li>
+          <li onClick={handlePreview} >
             <MarkdownPreviewIcon />
           </li>
           <li onClick={handleDelete}>
