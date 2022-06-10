@@ -65,9 +65,9 @@ export default function PopupDrawer({ page, user, note }) {
       <ul ref={popupDrawer} className={`PopupDrawer ${isActive ? 'active' : 'inactive'}`}>
         {chooseMenuItems()}
       </ul>
-      <button className={`PopupDrawer-button ${isActive ? 'active' : 'inactive'}`} onClick={handleMenuClick}>
-        +
-      </button>
+      <div className={`PopupDrawer-button ${isActive ? 'active' : 'inactive'}`} onClick={handleMenuClick}>
+        <MenuIcon />
+      </div>
     </div>
   );
 }
