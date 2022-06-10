@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as notesAPI from '../../utilities/notes-api';
+import {MarkdownPreviewIcon, DeleteNoteIcon, AddNoteIcon, AddTagIcon, MenuIcon} from '../HojaIcons/HojaIcons';
 import './PopupDrawer.css'
 
 export default function PopupDrawer({ page, user, note }) {
@@ -29,10 +30,18 @@ export default function PopupDrawer({ page, user, note }) {
           <li>Delete</li>
           <li>Add to Notebook</li>
           <li>Add Tags</li> */}
-          <li>P</li>
-          <li onClick={handleDelete}>D</li>
-          <li>N</li>
-          <li>T</li>
+          <li>
+            <MarkdownPreviewIcon />
+          </li>
+          <li onClick={handleDelete}>
+            <DeleteNoteIcon />
+          </li>
+          <li>
+            <AddNoteIcon />
+          </li>
+          <li>
+            <AddTagIcon />
+          </li>
         </>
       );
     }
@@ -41,8 +50,12 @@ export default function PopupDrawer({ page, user, note }) {
         <>
           {/* <li>New Note</li>
           <li>Delete</li> */}
-          <li onClick={handleNewNote}>N</li>
-          <li>D</li>
+          <li onClick={handleNewNote}>
+            <AddNoteIcon />
+          </li>
+          <li>
+            <DeleteNoteIcon />
+          </li>
         </>
       );
     }
@@ -52,7 +65,9 @@ export default function PopupDrawer({ page, user, note }) {
       <ul ref={popupDrawer} className={`PopupDrawer ${isActive ? 'active' : 'inactive'}`}>
         {chooseMenuItems()}
       </ul>
-      <button className={`PopupDrawer-button ${isActive ? 'active' : 'inactive'}`} onClick={handleMenuClick}>+</button>
+      <button className={`PopupDrawer-button ${isActive ? 'active' : 'inactive'}`} onClick={handleMenuClick}>
+        +
+      </button>
     </div>
   );
 }
