@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { marked } from 'marked';
+import hljs from 'highlight.js';
 import * as notesAPI from '../../utilities/notes-api';
 import PopupDrawer from '../../components/PopupDrawer/PopupDrawer';
 import MarkdownPreview from '../../components/MarkdownPreview/MarkdownPreview';
@@ -37,7 +38,7 @@ export default function NoteDetailPage({ user }) {
     marked.setOptions({
       renderer: new marked.Renderer(),
       highlight: function(code, lang) {
-        const hljs = require('highlight.js');
+        
         const language = hljs.getLanguage(lang) ? lang : 'plaintext';
         return hljs.highlight(code, { language }).value;
       },
@@ -50,8 +51,7 @@ export default function NoteDetailPage({ user }) {
       smartypants: false,
       xhtml: false
     });
-
-    const html = marked.parse(note.markdown_text);
+    const html = typeof(note.markdown_text) === 'String' ? marked.parse(note.markdown_text) : '';
     return <MarkdownPreview html={html} />
   }
 
