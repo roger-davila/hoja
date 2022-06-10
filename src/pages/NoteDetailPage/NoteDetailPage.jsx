@@ -51,7 +51,7 @@ export default function NoteDetailPage({ user }) {
       smartypants: false,
       xhtml: false
     });
-    const html = typeof(note.markdown_text) === 'String' ? marked.parse(note.markdown_text) : '';
+    const html = typeof note.markdown_text === 'string' ? marked.parse(note.markdown_text) : '';
     return <MarkdownPreview html={html} />
   }
 
