@@ -24,7 +24,7 @@ async function findNote(req, res) {
 }
 
 async function saveNote(req, res) {
-  const note = await Note.findByIdAndUpdate(req.body.note._id, { markdown_text: req.body.note.markdown_text });
+  const note = await Note.findByIdAndUpdate(req.body.note._id, req.body.note );
   return res.json(note);
 }
 
