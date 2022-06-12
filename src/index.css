@@ -9,6 +9,7 @@
   --text-danger: hsl(0, 96%, 65%);
   --bg-color-code-block: #f0f0f0;
   --border-color-code-block: #000000;
+  --link-color: #0079d3;
 }
 
 *, *:before, *:after {
@@ -34,11 +35,6 @@ body {
 #root {
   position: relative;
   min-height: 100vh;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
 }
 
 .main-container {

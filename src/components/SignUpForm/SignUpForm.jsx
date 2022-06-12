@@ -44,25 +44,26 @@ export default class SignUpForm extends Component {
         <form autoComplete="off" onSubmit={this.handleSubmit}>
           <h3>Hoja</h3>
           <h3>Create an Account with Hoja</h3>
-          <div>
+          <div className='auth-input-container'>
             <label>Name</label>
-            <input type="text" name="name" value={this.state.name} onChange={this.handleChange} required />
+            <input className='auth-input' type="text" name="name" value={this.state.name} onChange={this.handleChange} required />
           </div>
-          <div>
+          <div className='auth-input-container'>
             <label>Email</label>
-            <input type="email" name="email" value={this.state.email} onChange={this.handleChange} required />
+            <input className='auth-input' type="email" name="email" value={this.state.email} onChange={this.handleChange} required />
           </div>
-          <div>
+          <div className='auth-input-container'>
             <label>Password</label>
-            <input type="password" name="password" value={this.state.password} onChange={this.handleChange} required />
+            <input className='auth-input' type="password" name="password" value={this.state.password} onChange={this.handleChange} required />
           </div>
-          <div>
+          <div className='auth-input-container'>
             <label>Confirm</label>
-            <input type="password" name="confirm" value={this.state.confirm} onChange={this.handleChange} required />
+            <input className='auth-input' type="password" name="confirm" value={this.state.confirm} onChange={this.handleChange} required />
           </div>
-          <button type="submit" disabled={disable}>SIGN UP</button>
+          <button className='auth-button' type="submit" disabled={disable}>Sign Up</button>
+          <p>Already Have an account? <span className='form-switch' onClick={() => this.props.setShowSignUp(showSignUp => !showSignUp)}>Log In</span></p>
+          <p className="error-message">{this.state.error}</p>
         </form>
-        <p className="error-message">&nbsp;{this.state.error}</p>
       </>
     );
   }

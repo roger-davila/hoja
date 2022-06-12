@@ -38,7 +38,6 @@ export default function NoteDetailPage({ user }) {
     marked.setOptions({
       renderer: new marked.Renderer(),
       highlight: function(code, lang) {
-        
         const language = hljs.getLanguage(lang) ? lang : 'plaintext';
         return hljs.highlight(code, { language }).value;
       },
@@ -51,6 +50,7 @@ export default function NoteDetailPage({ user }) {
       smartypants: false,
       xhtml: false
     });
+    // Checks if new notes has been typed on, otherwise the marked parser will fail if the input is not of a string type.
     const html = typeof note.markdown_text === 'string' ? marked.parse(note.markdown_text) : '';
     return <MarkdownPreview html={html} />
   }
@@ -60,7 +60,6 @@ export default function NoteDetailPage({ user }) {
       <input className='note-title' name="title" onChange={handleTyping} value={note.title} />
       <p className='note-last-modified'>{note.lastModified}</p>
       {isMarkdown ? parseNote() : <textarea className='note-field' value={note.markdown_text} name="markdown_text" onChange={handleTyping} placeholder='Note field...' ></textarea>}
-
       <PopupDrawer page={'note'} user={user} note={note} setIsMarkdown={setIsMarkdown} />
     </main>
   )

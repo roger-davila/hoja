@@ -1,49 +1,43 @@
-.form-container {
-  padding: 1rem;
-  border: 1px solid var(--border-color-main);
-  border-radius: 4px;
-}
 
-.section-heading {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: var(--bg-color-main);
-  color: var(--text-dark);
-  border: .1vmin solid var(--accent-color);
-  border-radius: 1vmin;
-  padding: .6vmin;
-  text-align: center;
-  font-size: 2vmin;
+.form-container {
+  margin: auto;
+  flex-grow: 0;
 }
 
 p.error-message {
   color: var(--text-danger);
 }
 
-
 form {
   padding: 2rem;
-  margin: auto;
-  max-width: 400px;
+  min-width: 100%;
   border: 1px solid var(--border-color-main);
   border-radius: 8px;
-  display: grid;
   grid-template-columns: 1fr;
   gap: 0.5rem;
   color: var(--text-light);
   box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
 }
 
-label {
-  font-size: 0.8rem;
-  display: flex;
-  align-items: center;
+form > * {
+  margin-bottom: 0.75rem;
+}
+
+.auth-input-container {
+  position: relative;
+}
+
+.auth-input-container label {
+  color: var(--text-color-tertiary);
+  position: absolute;
+  font-size: 10px;
+  top: 0.25rem;
+  left: 0.5rem;
 }
 
 .auth-input {
   width: 100%;
-  padding: 0.3rem;
+  padding: 1.25rem 0.5rem 0.5rem;
   font-size: 16px;
   border: 1px solid var(--border-color-main);
   border-radius: 4px;
@@ -59,27 +53,18 @@ label {
 
 button,
 a.button {
+  font-size: 16px;
+  padding: 0.75rem;
   width: 100%;
   color: var(--bg-color-main);
   background-color: var(--bg-color-secondary);
-  font-size: 0.8rem;
   font-weight: bold;
   text-decoration: none;
-  text-align: center;
   border: none;
+  text-align: center;
   border-radius: 4px;
   outline: none;
   cursor: pointer;
-}
-
-button.btn-sm {
-  font-size: 1.5vmin;
-  padding: .6vmin .8vmin;
-}
-
-button.btn-xs {
-  font-size: 1vmin;
-  padding: .4vmin .5vmin;
 }
 
 button:disabled,
@@ -88,6 +73,13 @@ form:invalid button[type="submit"] {
   background-color: var(--bg-color-tertiary);
 }
 
-button[type="submit"] {
-  margin: 1vmin 0 0;
+.form-switch {
+  cursor: pointer;
+  color: var(--link-color);
+}
+
+@media screen and (min-width: 400px) {
+  form {
+    width: 400px;
+  }
 }

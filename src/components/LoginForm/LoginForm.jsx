@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import * as usersService from '../../utilities/users-service';
 
-export default function LoginForm({ setUser }) {
+export default function LoginForm({ setUser, setShowSignUp }) {
   const [credentials, setCredentials] = useState({
     email: '',
     password: ''
@@ -32,17 +32,18 @@ export default function LoginForm({ setUser }) {
       <form autoComplete="off" onSubmit={handleSubmit}>
         <h3>Log In</h3>
         <p>Enter your email and password to continue writing notes.</p>
-        <div>
+        <div className='auth-input-container'>
           <label>Email</label>
-          <input className='auth-input' type="text" name="email" value={credentials.email} onChange={handleChange} required placeholder='Email'/>
+          <input className='auth-input' type="text" name="email" value={credentials.email} onChange={handleChange} required />
         </div>
-        <div>
+        <div className='auth-input-container'>
           <label>Password</label>
-          <input className='auth-input' type="password" name="password" value={credentials.password} onChange={handleChange} required placeholder='Password'/>
+          <input className='auth-input' type="password" name="password" value={credentials.password} onChange={handleChange} required />
         </div>
-        <button type="submit">LOG IN</button>
+        <button type="submit">Log In</button>
+        <p>New to Hoja? <span className='form-switch' onClick={() => setShowSignUp(showSignUp => !showSignUp)}>Sign Up</span></p>
+        <p className="error-message">{error}</p>
       </form>
-      <p className="error-message">&nbsp;{error}</p>
     </>
   );
 }
