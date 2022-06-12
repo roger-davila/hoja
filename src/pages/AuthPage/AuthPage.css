@@ -1,6 +1,5 @@
 
 .form-container {
-  margin: auto;
   flex-grow: 0;
 }
 
@@ -10,13 +9,9 @@ p.error-message {
 
 form {
   padding: 2rem;
-  min-width: 100%;
-  border: 1px solid var(--border-color-main);
-  border-radius: 8px;
-  grid-template-columns: 1fr;
-  gap: 0.5rem;
+  width: 100%;
   color: var(--text-light);
-  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+
 }
 
 form > * {
@@ -78,8 +73,16 @@ form:invalid button[type="submit"] {
   color: var(--link-color);
 }
 
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 480px) {
+  .form-container {
+    margin: auto;
+    flex-grow: 0;
+  }
+
   form {
     width: 400px;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+    border: 1px solid var(--border-color-main);
+    border-radius: 8px;
   }
 }
