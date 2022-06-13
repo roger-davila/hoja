@@ -26,7 +26,7 @@ async function findNote(req, res) {
 async function saveNote(req, res) {
   let note;
   if (req.body.note.notebook) note = await Note.findByIdAndUpdate(req.body.note._id, req.body.note, { new: true }).populate('notebook');
-  else note = await Note.findByIdAndUpdate(req.body.note._id, { $unset: { notebook: '' } }, { new: true });
+  else note = await Note.findByIdAndUpdate(req.body.note._id, req.body.note, { $unset: { notebook: '' }, new: true});
   return res.json(note);
 }
 
