@@ -41,7 +41,7 @@ export default class SignUpForm extends Component {
     const disable = this.state.password !== this.state.confirm;
     return (
       <>
-        <form autoComplete="off" onSubmit={this.handleSubmit}>
+        <form className='auth-form' autoComplete="off" onSubmit={this.handleSubmit}>
           <h3>Hoja</h3>
           <p>Create an Account with Hoja</p>
           <div className='auth-input-container'>

@@ -8,7 +8,7 @@ p.error-message {
   color: var(--text-danger);
 }
 
-form {
+.auth-form {
   margin: 0 auto;
   padding: 2rem;
   width: 100%;
@@ -16,7 +16,7 @@ form {
 
 }
 
-form > * {
+.auth-form > * {
   margin-bottom: 0.75rem;
 }
 
@@ -81,7 +81,7 @@ form:invalid button[type="submit"] {
     flex-grow: 0;
   }
 
-  form {
+  .auth-form {
     width: 400px;
     box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
     border: 1px solid var(--border-color-main);

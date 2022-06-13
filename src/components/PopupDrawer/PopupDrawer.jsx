@@ -1,10 +1,11 @@
 import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as notesAPI from '../../utilities/notes-api';
+import * as notebooksAPI from '../../utilities/notebooks-api';
 import { MarkdownPreviewIcon, DeleteNoteIcon, AddNoteIcon, AddTagIcon, MenuIcon, AddNotebookIcon } from '../HojaIcons/HojaIcons';
 import './PopupDrawer.css'
 
-export default function PopupDrawer({ page, user, note, setIsMarkdown, setNotebookListVisible }) {
+export default function PopupDrawer({ page, user, note, setIsMarkdown, setNotebookListVisible, setIsNewNotebookFormActive }) {
   const navigate = useNavigate();
   const popupDrawer = useRef(null);
   const [isActive, setIsActive] = useState(false);
@@ -26,6 +27,11 @@ export default function PopupDrawer({ page, user, note, setIsMarkdown, setNotebo
   async function handleAddToNotebook() {
     setIsActive(!isActive);
     setNotebookListVisible(true);
+  }
+
+  async function handleNewNotebook() {
+    setIsActive(!isActive);
+    setIsNewNotebookFormActive(true);
   }
 
   function handlePreview() {
@@ -55,14 +61,14 @@ export default function PopupDrawer({ page, user, note, setIsMarkdown, setNotebo
     if (page === 'notebooks') {
       return (
         <>
-          <li onClick={handleNewNote}><AddNotebookIcon /></li>
+          <li onClick={handleNewNotebook}><AddNotebookIcon /></li>
         </>
       );
     }
     if (page === 'notebook') {
       return (
         <>
-          <li onClick={handleNewNote}><AddNotebookIcon /></li>
+          <li onClick={handleNewNotebook}><AddNotebookIcon /></li>
         </>
       );
     }

@@ -4,7 +4,8 @@ const Note = require('../../models/note');
 module.exports = {
   getAllNotebooks,
   getNotebook,
-  getAllNotesFromNotebook
+  getAllNotesFromNotebook,
+  createNotebook
 }
 
 async function getAllNotebooks(req, res) {
@@ -20,4 +21,10 @@ async function getNotebook(req, res) {
 async function getAllNotesFromNotebook(req, res) {
   const notes = await Note.find({ notebook: req.params.notebookId}).populate('notebook');
   return res.json(notes);
+}
+
+async function createNotebook(req, res) {
+  req.body.user = req.user._id;
+  const notebook = await Notebook.create(req.body);
+  return res.json(notebook);
 }

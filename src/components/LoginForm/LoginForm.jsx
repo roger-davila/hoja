@@ -29,7 +29,7 @@ export default function LoginForm({ setUser, setShowSignUp }) {
 
   return (
     <>
-      <form autoComplete="off" onSubmit={handleSubmit}>
+      <form className='auth-form' autoComplete="off" onSubmit={handleSubmit}>
         <h3>Log In</h3>
         <p>Enter your email and password to continue writing notes.</p>
         <div className='auth-input-container'>

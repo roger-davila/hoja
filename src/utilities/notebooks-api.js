@@ -12,3 +12,7 @@ export function getNotebook(notebookId) {
 export function getFromNotebook(notebookId) {
   return sendRequest(`${BASE_URL}/user/notebooks/${notebookId}/notes`);
 }
+
+export function createNotebook(name) {
+  return sendRequest(`${BASE_URL}/user/notebooks`, 'Post', { name })
+}
