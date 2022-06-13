@@ -52,6 +52,20 @@ export default function PopupDrawer({ page, user, note, setIsMarkdown, setNotebo
         </>
       );
     }
+    if (page === 'notebooks') {
+      return (
+        <>
+          <li onClick={handleNewNote}><AddNotebookIcon /></li>
+        </>
+      );
+    }
+    if (page === 'notebook') {
+      return (
+        <>
+          <li onClick={handleNewNote}><AddNotebookIcon /></li>
+        </>
+      );
+    }
   }
   return (
     <div className="PopupDrawer-container">
