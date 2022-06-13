@@ -3,7 +3,7 @@
 <div align="center">
     <img src="./public/images/hoja_markdown.png">
     <h1>Hoja</h1>
-    <h3><a href="https://hoja-notes.herokuapp.com/" target="_blank">Visit Hoja</a></h3>
+    <h3><a href="https://hoja-note.herokuapp.com/" target="_blank">Visit Hoja</a></h3>
     <h3>Roger Davila</h3>
         <a href="https://www.linkedin.com/in/roger-davila/" target="_blank">
       <img src="https://img.shields.io/badge/-linkedin.com/in/rogerdavila-blue?style=flat&``logo=Linkedin&logoColor=white">
@@ -76,6 +76,7 @@ Used Trello to keep track of the user stories that were being implemented for th
 
 ## :fast_forward: Next Steps 
 ### Upcoming Features
+- [ ] Searching
 - [ ] App Themes
 - [ ] Note encryption
 - [ ] Tagging Notes
