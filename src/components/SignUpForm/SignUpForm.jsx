@@ -43,7 +43,7 @@ export default class SignUpForm extends Component {
       <>
         <form autoComplete="off" onSubmit={this.handleSubmit}>
           <h3>Hoja</h3>
-          <h3>Create an Account with Hoja</h3>
+          <p>Create an Account with Hoja</p>
           <div className='auth-input-container'>
             <label>Name</label>
             <input className='auth-input' type="text" name="name" value={this.state.name} onChange={this.handleChange} required />
