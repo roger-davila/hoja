@@ -1,0 +1,34 @@
+.Notebook {
+  display: grid;
+  grid-template-columns: 11fr 1fr;
+  align-items: center;
+  color: var(--text-color-primary);
+  padding: 1rem 0.75rem;
+  border: 1px solid #E0E0E0;
+  border-radius: 4px;
+}
+
+.Notebook .title {
+  font-size: 20px;
+}
+
+.arrow-container {
+  width: 100%;
+  display: flex;
+}
+
+.arrow-container .icon {
+  height: 24px;
+  width: 20px;
+  margin-left: auto;
+  color: black;
+}
+
+.notebook-link {
+  display: block;
+  text-decoration: none;
+}
+
+.notebook-link:not(:last-child) {
+  margin-bottom: 0.5rem;
+}

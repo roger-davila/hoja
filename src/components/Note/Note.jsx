@@ -8,7 +8,7 @@ export default function Note({ note, user }) {
         <p className='note-text-preview'>{note.markdown_text}</p>
         <section className='note-details'>
           <p className='last-updated'>{note.lastModified}</p>
-          <p className='notebook'>{note.notebook}</p>
+          {note.notebook ? <p className='notebook'>{note.notebook.name}</p> : ''}
         </section>
       </article>
     </Link>

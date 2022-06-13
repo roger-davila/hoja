@@ -12,4 +12,4 @@ const tagSchema = new Schema({
   timestamps: true
 });
 
-module.exports = mongoose.Model('Tag', tagSchema);
+module.exports = mongoose.model('Tag', tagSchema);

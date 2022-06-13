@@ -3,8 +3,13 @@
   flex-direction: column;
 }
 
+.NoteDetailPage .note-head {
+  border-bottom: 1px solid var(--border-color-main);
+  margin-bottom: 0.75rem;
+}
+
 .NoteDetailPage .note-title,
-.NoteDetailPage .note-last-modified {
+.NoteDetailPage .note-details {
   margin-bottom: 0.4rem;
 }
 
@@ -13,7 +18,10 @@
   font-size: 20px;
 }
 
-.NoteDetailPage .note-last-modified {
+.NoteDetailPage .note-details {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
   font-size: 14px;
   color: var(--text-color-tertiary);
 }

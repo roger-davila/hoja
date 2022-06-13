@@ -6,7 +6,7 @@ const email = 'therog@mail.com'
 // Require the Mongoose models
 const User = require('./models/user');
 const Note = require('./models/note');
-// const Category = require('./models/category');
+const Notebook = require('./models/notebook');
 // const Order = require('./models/order');
 
 

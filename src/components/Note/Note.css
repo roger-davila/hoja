@@ -38,3 +38,8 @@
 .note-title, .note-text-preview {
   margin-bottom: 0.3rem;
 }
+
+.note-details {
+  display: flex;
+  justify-content: space-between;
+}

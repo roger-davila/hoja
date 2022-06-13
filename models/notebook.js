@@ -6,10 +6,11 @@ const notebookSchema = new Schema({
   name: {
     type: String,
     minlength: 1,
-    maxlength: 50
+    maxlength: 50,
+    required: true
   }
 }, {
   timestamps: true
 });
 
-module.exports = mongoose.Model('Notebook', notebookSchema);
+module.exports = mongoose.model('Notebook', notebookSchema);

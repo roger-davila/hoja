@@ -1,13 +1,14 @@
 import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as notesAPI from '../../utilities/notes-api';
-import {MarkdownPreviewIcon, DeleteNoteIcon, AddNoteIcon, AddTagIcon, MenuIcon} from '../HojaIcons/HojaIcons';
+import { MarkdownPreviewIcon, DeleteNoteIcon, AddNoteIcon, AddTagIcon, MenuIcon, AddNotebookIcon } from '../HojaIcons/HojaIcons';
 import './PopupDrawer.css'
 
-export default function PopupDrawer({ page, user, note, setIsMarkdown}) {
-  let navigate = useNavigate();
+export default function PopupDrawer({ page, user, note, setIsMarkdown, setNotebookListVisible }) {
+  const navigate = useNavigate();
   const popupDrawer = useRef(null);
   const [isActive, setIsActive] = useState(false);
+
   async function handleMenuClick() {
     setIsActive(!isActive);
   }
@@ -22,6 +23,11 @@ export default function PopupDrawer({ page, user, note, setIsMarkdown}) {
     navigate(`/${user.name}/notes`);
   }
 
+  async function handleAddToNotebook() {
+    setIsActive(!isActive);
+    setNotebookListVisible(true);
+  }
+
   function handlePreview() {
     setIsMarkdown((isMarkdown) => !isMarkdown);
   }
@@ -30,36 +36,19 @@ export default function PopupDrawer({ page, user, note, setIsMarkdown}) {
     if (page === 'note') {
       return (
         <>
-          {/* <li>Preview</li>
-          <li>Delete</li>
-          <li>Add to Notebook</li>
-          <li>Add Tags</li> */}
-          <li onClick={handlePreview} >
-            <MarkdownPreviewIcon />
-          </li>
-          <li onClick={handleDelete}>
-            <DeleteNoteIcon />
-          </li>
-          <li>
-            <AddNoteIcon />
-          </li>
-          <li>
-            <AddTagIcon />
-          </li>
+          <li onClick={handlePreview}><MarkdownPreviewIcon /></li>
+          <li onClick={handleDelete}><DeleteNoteIcon /></li>
+          <li onClick={handleAddToNotebook}><AddNotebookIcon /></li>
+          <li><AddNoteIcon /></li>
+          <li><AddTagIcon /></li>
         </>
       );
     }
     if (page === 'notes') {
       return (
         <>
-          {/* <li>New Note</li>
-          <li>Delete</li> */}
-          <li onClick={handleNewNote}>
-            <AddNoteIcon />
-          </li>
-          <li>
-            <DeleteNoteIcon />
-          </li>
+          <li onClick={handleNewNote}><AddNoteIcon /></li>
+          <li><DeleteNoteIcon /></li>
         </>
       );
     }
@@ -70,7 +59,7 @@ export default function PopupDrawer({ page, user, note, setIsMarkdown}) {
         {chooseMenuItems()}
       </ul>
       <button className={`PopupDrawer-button ${isActive ? 'active' : 'inactive'}`} onClick={handleMenuClick}>
-          <MenuIcon />
+        <MenuIcon />
       </button>
     </div>
   );

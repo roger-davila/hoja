@@ -14,8 +14,8 @@ export default function NavBar({ user, setUser }) {
   return (
     <nav className='NavBar'>
       <Link to={`/${user.name}/notes`}>Notes</Link>
-      <Link to={`/${user.name}/notes`}>Notebooks</Link>
-      <Link to={`/${user.name}/notes`}>Tags</Link>
+      <Link to={`/${user.name}/notebooks`}>Notebooks</Link>
+      <Link to={``}>Tags</Link>
       <Link to="" onClick={handleLogOut}>Log Out</Link>
     </nav>
   );

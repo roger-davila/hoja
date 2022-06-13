@@ -9,22 +9,24 @@ module.exports = {
 }
 
 async function getAllNotes(req, res) {
-  const notes = await Note.find({ user: req.user._id }).sort('-updatedAt');
+  const notes = await Note.find({ user: req.user._id }).sort('-updatedAt').populate('notebook');
   return res.json(notes);
 }
 
 async function createNote(req, res) {
-  const note = await Note.create({ user: req.user._id});
+  const note = await Note.create({ user: req.user._id });
   return res.json(note);
 }
 
 async function findNote(req, res) {
-  const note = await Note.findById(req.params.noteId);
+  const note = await Note.findById(req.params.noteId).populate('notebook');
   return res.json(note);
 }
 
 async function saveNote(req, res) {
-  const note = await Note.findByIdAndUpdate(req.body.note._id, req.body.note );
+  let note;
+  if (req.body.note.notebook) note = await Note.findByIdAndUpdate(req.body.note._id, req.body.note, { new: true }).populate('notebook');
+  else note = await Note.findByIdAndUpdate(req.body.note._id, { $unset: { notebook: '' } }, { new: true });
   return res.json(note);
 }
 

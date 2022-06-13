@@ -3,14 +3,22 @@ import { useParams } from 'react-router-dom';
 import { marked } from 'marked';
 import hljs from 'highlight.js';
 import * as notesAPI from '../../utilities/notes-api';
+import * as notebooksAPI from '../../utilities/notebooks-api';
 import PopupDrawer from '../../components/PopupDrawer/PopupDrawer';
 import MarkdownPreview from '../../components/MarkdownPreview/MarkdownPreview';
+import NotebookMenu from '../../components/NotebookMenu/NotebookMenu';
 import './NoteDetailPage.css';
 
 export default function NoteDetailPage({ user }) {
   const { noteId } = useParams();
-  const [note, setNote] = useState({});
+  const [note, setNote] = useState({
+    title: '',
+    markdown_text: ''
+  });
+
+  const [notebooks, setNotebooks] = useState([]);
   const [isMarkdown, setIsMarkdown] = useState(false);
+  const [notebookListVisible, setNotebookListVisible] = useState(false);
   const timer = useRef();
   const autoSave = useRef(false);
 
@@ -19,7 +27,12 @@ export default function NoteDetailPage({ user }) {
       const note = await notesAPI.getNote(noteId);
       setNote(note);
     }
+    async function getNotebooks() {
+      const notebooks = await notebooksAPI.getNotebooks();
+      setNotebooks(notebooks);
+    }
     getNote();
+    getNotebooks();
   }, []);
 
   useEffect(() => {
@@ -37,7 +50,7 @@ export default function NoteDetailPage({ user }) {
   function parseNote() {
     marked.setOptions({
       renderer: new marked.Renderer(),
-      highlight: function(code, lang) {
+      highlight: function (code, lang) {
         const language = hljs.getLanguage(lang) ? lang : 'plaintext';
         return hljs.highlight(code, { language }).value;
       },
@@ -57,10 +70,16 @@ export default function NoteDetailPage({ user }) {
 
   return (
     <main className='NoteDetailPage main-container'>
-      <input className='note-title' name="title" onChange={handleTyping} value={note.title} />
-      <p className='note-last-modified'>{note.lastModified}</p>
+      <header className='note-head'>
+        <input className='note-title' name="title" onChange={handleTyping} value={note.title} />
+        <section className='note-details'>
+          {note.notebook && <p className='note-notebook'>{note.notebook.name}</p>}
+          <p className='note-last-modified'>Last Modified - {note.lastModified}</p>
+        </section>
+      </header>
       {isMarkdown ? parseNote() : <textarea className='note-field' value={note.markdown_text} name="markdown_text" onChange={handleTyping} placeholder='Note field...' ></textarea>}
-      <PopupDrawer page={'note'} user={user} note={note} setIsMarkdown={setIsMarkdown} />
+      <PopupDrawer page={'note'} user={user} note={note} setIsMarkdown={setIsMarkdown} setNotebookListVisible={setNotebookListVisible} />
+      <NotebookMenu note={note} setNote={setNote} notebook={note.notebook?.name} notebooks={notebooks} notebookListVisible={notebookListVisible} setNotebookListVisible={setNotebookListVisible} />
     </main>
   )
 }

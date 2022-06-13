@@ -25,6 +25,7 @@ app.use('/api/users', require('./routes/api/users'));
 
 //ENSURE LOGGED IN HERE
 app.use('/api/notes', require('./routes/api/notes'));
+app.use('/api/notebooks', require('./routes/api/notebooks'));
 
 // "catch-all" route that will match all GET requests
 // that don't match an API route defined above

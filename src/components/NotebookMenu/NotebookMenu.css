@@ -1,0 +1,47 @@
+.NotebookMenu {
+  width: 300px;
+  text-align: center;
+  position: fixed;
+  left: 50%;
+  bottom: 1rem;
+  display: none;
+  color: var(--text-color-primary);
+  transform: translate(-50%)
+}
+
+.NotebookMenu li {
+  cursor: pointer;
+  padding: 0.75rem 2rem;
+  list-style: none;
+}
+
+.NotebookMenu li:not(:last-child) {
+  border-bottom: 1px solid var(--border-color-main);
+}
+
+.NotebookMenu.Active {
+  display: block;
+}
+
+.NotebookMenu .notebook-list {
+  border-radius: 4px;
+  background-color: var(--bg-color-main);
+  border: 1px solid var(--border-color-main);
+  overflow-y: auto;
+  max-height: 200px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.NotebookMenu .menu-option {
+  cursor: pointer;
+  border-radius: 4px;
+  background-color: var(--bg-color-main);
+  border: 1px solid var(--border-color-main);
+  padding: 0.75rem 2rem;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.NotebookMenu .menu-option:not(:last-child),
+.NotebookMenu .notebook-list {
+  margin-bottom: 0.5rem;
+}
