@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import * as notebooksAPI from '../../utilities/notebooks-api';
 import NotesList from '../../components/NotesList/NotesList';
+import PopupDrawer from '../../components/PopupDrawer/PopupDrawer';
 
 export default function NotebookDetailPage({ user }) {
   const { notebookId } = useParams();
@@ -26,6 +27,7 @@ export default function NotebookDetailPage({ user }) {
       <section className='notebook-notes'>
         {notes.length ? <NotesList notes={notes} user={user} /> : <p>No notes in this notebook</p>}
       </section>
+      <PopupDrawer page={'notebook'} user={user} />
     </main>
   )
 }
