@@ -11,6 +11,7 @@ import './App.css';
 
 function App() {
   const [user, setUser] = useState(getUser());
+  const [demo, setDemo] = useState(false);
 
   return (
     <main className="App">
@@ -27,7 +28,10 @@ function App() {
           </Routes>
         </>
         :
-        <AuthPage setUser={setUser} />
+        <>
+          <NavBar user={user} setUser={setUser} demo={demo} setDemo={setDemo} />
+          <AuthPage setUser={setUser} demo={demo} />
+        </>
       }
     </main>
   );
