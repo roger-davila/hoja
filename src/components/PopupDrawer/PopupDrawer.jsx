@@ -72,6 +72,13 @@ export default function PopupDrawer({ page, user, note, setIsMarkdown, setNotebo
         </>
       );
     }
+    if (page === 'demo') {
+      return (
+        <>
+          <li onClick={handlePreview}><MarkdownPreviewIcon /></li>
+        </>
+      );
+    }
   }
   return (
     <div className="PopupDrawer-container">
