@@ -14,7 +14,7 @@
 </div>
 
 # About Hoja
-Hoja is a simple and minimal markdown note taking app focused on letting you have access to your notes not matter what device or browser you are using. Store your notes in notebooks to stay organized and preview the markdown text as you type. 
+Hoja is a simple and minimal markdown note taking app focused on letting you have access to your notes no matter what device or browser you are using. Store your notes in notebooks to stay organized and preview the markdown text as you type. 
 
 # How to Use Hoja
 
