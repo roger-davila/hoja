@@ -21,7 +21,7 @@ export default function NavBar({ user, setUser, demo, setDemo }) {
         </>
       ) : (
         <>
-          <Link className='menu-link' to="" onClick={()=> setDemo(!demo)}>{demo ? 'Demo Page' : 'Back to Auth Page'}</Link>
+          <Link className='menu-link' to="" onClick={()=> setDemo(!demo)}>{demo ? 'Back to Auth Page' : 'Demo Page'}</Link>
         </>
       )}
     </nav>
