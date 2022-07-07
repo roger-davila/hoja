@@ -17,7 +17,7 @@ export default function NoteDetailPage({ user }) {
   });
 
   const [notebooks, setNotebooks] = useState([]);
-  const [isMarkdown, setIsMarkdown] = useState(false);
+  const [isMarkdown, setIsMarkdown] = useState(true);
   const [notebookListVisible, setNotebookListVisible] = useState(false);
   const timer = useRef();
   const autoSave = useRef(false);
