@@ -1,18 +1,19 @@
 .PopupDrawer-container {
   background-color: var(--bg-color-secondary);
   position: fixed;
-  border-radius: 60px;
+  border-radius: 72px;
   bottom: 20px;
   right: 20px;
+  width: 72px;
 }
 
 .PopupDrawer {
   flex-direction: column;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1rem 1rem 0;
+  padding: 1rem 0 0;
   color: var(--text-color-secondary);
-  border-radius: 60px 60px 0 0;
+  border-radius: 72px 72px 0 0;
   position: relative;
   bottom: 100%;
   display: none;
@@ -29,9 +30,8 @@
 
 .PopupDrawer-button {
   border-radius: 50%;
-  height: 60px;
-  width: 60px;
-  padding: 1rem;
+  height: 72px;
+  width: 72px;
   cursor: pointer;
 }
 
@@ -43,4 +43,17 @@
 .PopupDrawer,
 .PopupDrawer-button {
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+}
+
+.PopupDrawer .menu-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.icon-text {
+  text-align: center;
+  font-size: 12px;
 }

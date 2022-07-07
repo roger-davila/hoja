@@ -42,40 +42,62 @@ export default function PopupDrawer({ page, user, note, setIsMarkdown, setNotebo
     if (page === 'note') {
       return (
         <>
-          <li onClick={handlePreview}><MarkdownPreviewIcon /></li>
-          <li onClick={handleDelete}><DeleteNoteIcon /></li>
-          <li onClick={handleAddToNotebook}><AddNotebookIcon /></li>
-          <li><AddNoteIcon /></li>
-          <li><AddTagIcon /></li>
+          <li className='menu-item' onClick={handlePreview}>
+            <MarkdownPreviewIcon />
+            <p className='icon-text'>Preview</p>
+          </li>
+          <li className='menu-item' onClick={handleDelete}>
+            <DeleteNoteIcon />
+            <p className='icon-text'>Delete</p>
+          </li>
+          <li className='menu-item' onClick={handleAddToNotebook}>
+            <AddNotebookIcon />
+            <p className='icon-text'>Notebook</p>
+          </li>
+          <li className='menu-item' onClick={handleNewNote}>
+            <AddNoteIcon />
+            <p className='icon-text'>New Note</p>
+          </li>
         </>
       );
     }
     if (page === 'notes') {
       return (
         <>
-          <li onClick={handleNewNote}><AddNoteIcon /></li>
-          <li><DeleteNoteIcon /></li>
+          <li className='menu-item' onClick={handleNewNote}>
+            <AddNoteIcon />
+            <p className='icon-text'>New Note</p>
+          </li>
         </>
       );
     }
     if (page === 'notebooks') {
       return (
         <>
-          <li onClick={handleNewNotebook}><AddNotebookIcon /></li>
+          <li className='menu-item' onClick={handleNewNotebook}>
+            <AddNotebookIcon />
+            <p className='icon-text'>New Notebook</p>
+          </li>
         </>
       );
     }
     if (page === 'notebook') {
       return (
         <>
-          <li onClick={handleNewNotebook}><AddNotebookIcon /></li>
+          <li className='menu-item' onClick={handleNewNotebook}>
+            <AddNotebookIcon />
+            <p className='icon-text'>New Notebook</p>
+          </li>
         </>
       );
     }
     if (page === 'demo') {
       return (
         <>
-          <li onClick={handlePreview}><MarkdownPreviewIcon /></li>
+          <li className='menu-item' onClick={handlePreview}>
+            <MarkdownPreviewIcon />
+            <p className='icon-text'>Preview</p>
+          </li>
         </>
       );
     }
